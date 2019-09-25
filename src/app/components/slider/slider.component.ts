@@ -33,9 +33,9 @@ export class SliderComponent implements OnInit {
     for (let x = 1; x <= count; x++) {
       this.catalogues.getWorld(x, code).subscribe(res => {
         this.items = res;
-        console.log(this.items.worlds);
-        console.log(this.items);
-        console.log(this.items.statusCode);
+        // console.log(this.items.worlds);
+        // console.log(this.items);
+        // console.log(this.items.statusCode);
         // Added to check if the user already liked or disliked an item
         // if (this.items.statusCode === 200) {
           if (this.items.worlds.length !== 0) {
