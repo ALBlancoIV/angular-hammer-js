@@ -1,21 +1,7 @@
 <div>
-  <div
-    *ngFor="let y of featured"
-    class="slider"
-   >
-    <div *ngFor="let x of y.worlds">
-      <a *ngIf="x.contents.length != 0">
-        <h3>{{ x.headers.headerLabel }}</h3>
-      </a>
-      <div class="sliderContent">
-        <div *ngIf="x.contents.length != 0" class="sliderContentTitle">
-          <div class="card" *ngFor="let i of x.contents; let index = index">
-            <h4>{{ i.textHead }}</h4>
-            <img src="{{ i.thumbnail }}" />
-            <h5>{{ i.textBody }}</h5>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div *ngFor="let y of featured" class="slider">
+    <!-- <div *ngFor="let x of "> -->
+      <app-tile [worldsData]="y.worlds"></app-tile>
+    <!-- </div> -->
   </div>
 </div>
