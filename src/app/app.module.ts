@@ -1,6 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from "@angular/platform-browser";
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import { NgModule } from "@angular/core";
@@ -13,6 +16,7 @@ import { SliderComponent } from "./components/slider/slider.component";
 import { TileComponent } from "./components/tile/tile.component";
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { DragScrollModule } from "ngx-drag-scroll";
 import { DeferLoadModule } from '@trademe/ng-defer-load';
 
@@ -23,6 +27,8 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [AppComponent, SliderComponent, TileComponent],
   imports: [
@@ -30,11 +36,15 @@ export class MyHammerConfig extends HammerGestureConfig {
     AppRoutingModule,
     HttpClientModule,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
     DragScrollModule,
     DeferLoadModule
+=======
+    ScrollingModule
+>>>>>>> Stashed changes
 =======
     ScrollingModule
 >>>>>>> Stashed changes
