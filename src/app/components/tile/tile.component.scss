@@ -1,0 +1,68 @@
+div {
+  a {
+    h3 {
+      color: #000000;
+    }
+  }
+}
+
+.sliderContent {
+  height: 200px;
+  width: 300px;
+  .cdk-virtual-scroll-content-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .cardWrapper {  
+    display: inline-flex;
+    div.card {
+      border: 2px solid #000000;
+      padding: 10px;
+  
+      h4 {
+        margin: 0px;
+      }
+      img {
+        max-width: 200px;
+        pointer-events: none;
+      }
+      h5 {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+
+
+.card:nth-of-type(even) {
+  background-color: #c1c1c1;
+}
+
+.sliderContent {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sliderContent::-webkit-scrollbar {
+  width: 0 !important;
+}
+.sliderContent {
+  overflow: -moz-scrollbars-none;
+}
+.sliderContent {
+  -ms-overflow-style: none;
+}
+
+.sliderWrapper .sliderContent .cdk-virtual-scroll-content-wrapper {
+  min-height: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+cdk-virtual-scroll-viewport.sliderContent.cdk-virtual-scroll-viewport.cdk-virtual-scroll-orientation-horizontal
+  > div {
+  display: flex !important;
+  flex-direction: row !important;
+}
