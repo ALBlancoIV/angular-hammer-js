@@ -1,59 +1,45 @@
-// /* Extra small devices (phones, 600px and down) */
-// @media only screen and (max-width: 600px) {
-//   .sliderContentTitle {
-//     display: flex;
-//     flex-direction: row;
-//     overflow-x: scroll;
-//   }
-// }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+}
 
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-//   .sliderContentTitle {
-//     display: flex;
-//     flex-direction: row;
-//     overflow-x: scroll;
-//   }
-// }
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
 
-// /* Medium devices (landscape tablets, 768px and up) */
-// @media only screen and (min-width: 768px) {
-//   .sliderContent {
-//     overflow: hidden;
-//     height: 204px;
-//   }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
 
-//   .sliderContentTitle {
-//     display: flex;
-//     flex-direction: row;
-//     overflow-x: scroll;
-//   }
-// }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
 
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-//   .sliderContent {
-//     overflow: hidden;
-//     height: 204px;
-//   }
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
 
-//   .sliderContentTitle {
-//     display: flex;
-//     flex-direction: row;
-//     overflow-x: scroll;
-//   }
-// }
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
 
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {
-//   .sliderContent {
-//     overflow: hidden;
-//     height: 204px;
-//   }
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
 
-//   .sliderContentTitle {
-//     display: flex;
-//     flex-direction: row;
-//     overflow-x: scroll;
-//   }
-// }
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}

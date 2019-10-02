@@ -8,7 +8,12 @@ import { Component, OnInit, Input } from "@angular/core";
 export class TileComponent implements OnInit {
   @Input() worldsData: any;
 
+  horizontalPx: number = 5;
+
   constructor() {}
 
   ngOnInit() {}
+  log(msg) {
+    console.log(msg);
+  }
 }

@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-progressive-image-loader/ngx-progressive-image-loader';
+
+$scale: 0.5; // the scale of loading image in place holder
+$transition: opacity 0.5s linear; // the transition of loading image in place holder, you could try: opacity .3s ease
+@include progressive-image-loader($scale);
