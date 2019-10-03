@@ -9,13 +9,14 @@ import { AppComponent } from "./app.component";
 
 import { NavigationComponent } from "./components/navigation/navigation.component";
 import { HeroSliderComponent } from "./components/hero-slider/hero-slider.component";
+import { CategoryComponent } from "./components/category/category.component";
 
 import { DragScrollModule } from "ngx-drag-scroll"; //not used
 import { DeferLoadModule } from "@trademe/ng-defer-load"; //Lazy Loading Imgs
 import { NgxHmCarouselModule } from 'ngx-hm-carousel'; //carousel for hero component
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, HeroSliderComponent],
+  declarations: [AppComponent, NavigationComponent, HeroSliderComponent, CategoryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

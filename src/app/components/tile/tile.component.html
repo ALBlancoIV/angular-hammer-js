@@ -42,29 +42,33 @@
   </div>
 </div> -->
 
-<div *ngFor="let x of worldsData">
-  <a *ngIf="x.contents.length != 0">
-    <h3>{{ x.headers.headerLabel }}</h3>
-  </a>
-  <div class="sliderContent" *ngIf="x.contents.length != 0">
-    <div class="sliderContentTitle">
-      <div *ngFor="let i of x.contents" (deferLoad)="x.showID = true">
-         <div class="card" *ngIf="x.showID == true"> 
-          <h4>{{ i.textHead }}</h4>
-          <ngx-progressive-image-loader>
-            <!-- <ngx-image-placeholder>
-              <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> 
-            </ngx-image-placeholder> -->
-            <img
-              src="{{ i.thumbnail }}"
-              alt="{{ i.textHead }}"
-              ngxProgressiveImage
-            />
-          </ngx-progressive-image-loader>
-          <!-- <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> -->
-          <h5>{{ i.textBody }}</h5>
-        </div>
+<ng-container *ngFor="let x of worldsData">
+  <div>
+    <a *ngIf="x.contents.length != 0">
+      <h3>{{ x.headers.headerLabel }}</h3>
+    </a>
+    <div class="sliderContent" *ngIf="x.contents.length != 0">
+      <div class="sliderContentTitle">
+        <ng-container *ngFor="let i of x.contents">
+          <div  (deferLoad)="x.showID = true">
+            <div class="card" *ngIf="x.showID == true">
+              <h4>{{ i.textHead }}</h4>
+              <ngx-progressive-image-loader>
+                <!-- <ngx-image-placeholder>
+                <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> 
+              </ngx-image-placeholder> -->
+                <img
+                  src="{{ i.thumbnail }}"
+                  alt="{{ i.textHead }}"
+                  ngxProgressiveImage
+                />
+              </ngx-progressive-image-loader>
+              <!-- <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> -->
+              <h5>{{ i.textBody }}</h5>
+            </div>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
-</div>
+</ng-container>

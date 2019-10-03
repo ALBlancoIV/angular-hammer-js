@@ -8,7 +8,6 @@ import { CataloguesService } from "../../services/catalogues.service";
 })
 
 export class SliderComponent implements OnInit {
-  @Input() allVidLikes: any;
   featured: any[];
   items: any;
   count: number = 26;

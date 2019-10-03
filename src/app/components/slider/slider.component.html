@@ -1,7 +1,7 @@
 <div>
-  <div *ngFor="let y of featured" class="slider">
+  <ng-container *ngFor="let y of featured" class="slider">
     <!-- <div *ngFor="let x of "> -->
-      <app-tile [worldsData]="y.worlds"></app-tile>
+    <app-tile [worldsData]="y.worlds"></app-tile>
     <!-- </div> -->
-  </div>
+  </ng-container>
 </div>
