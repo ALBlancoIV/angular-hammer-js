@@ -1,0 +1,49 @@
+.aniT {
+  transition: all 1s linear;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out !important;
+}
+
+.carousel {
+  .content {
+    display: flex;
+    .item {
+      width: 100%;
+      display: block;
+
+      .img {
+        width: 100%;
+        display: block;
+        background-size: cover;
+        background-position: center;
+        height: 100%
+      }
+    }
+  }
+
+  .ball {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #fff;
+    opacity: 0.5;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  .click-area {
+    width: 50px;
+    text-align: center;
+    .material-icons {
+      color: white;
+    }
+    i {
+      font-size: 2em;
+    }
+  }
+}

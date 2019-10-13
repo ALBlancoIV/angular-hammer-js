@@ -1,58 +1,115 @@
-div {
-  a {
-    h3 {
-      color: #000000;
+.sliderContent {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  // min-height: 288px; --SCALING TILES
+  min-height: 5rem;
+  align-items: center;
+  scroll-behavior: smooth;
+  .sliderContentTitle {
+    margin: 0 0;
+    a {
+      h3 {
+        color: white;
+      }
     }
   }
-  .sliderContent {
-    .sliderContentTitle {
-      display: flex;
-      flex-direction: row;
+  .SliderContentCards {
+    -webkit-transition: all 0.195s ease-out;
+    -moz-transition: all 0.195s ease-out;
+    -o-transition: all 0.195s ease-out;
+    transition: all 0.195s ease-out;
+    .card {
+      width: 15rem;
+      margin: 0 5px;
+      position: relative;
+      cursor: pointer;
+      overflow-y: hidden;
+      img {
+        max-width: 100%;
+        pointer-events: none;
+      }
     }
+  }
+
+  .chevron {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    font-size: 3em;
+    z-index: 5;
+    cursor: pointer;
+    color: #c3c3c3;
+    padding: 2rem 0 2rem 0;
+  }
+  .Left {
+    left: 0;
+  }
+  .Right {
+    right: 0;
   }
 }
 
-.card {
-  border: 2px solid #000000;
-  padding: 10px;
-  width: 13rem;
-  min-height: 14rem;
-  
+/* .SliderContentCards:hover { // SCALING TILES
+  transform: scale(1.5) translate3d(53px, 0, 0); 
+  z-index: 1;
+}
+
+.SliderContentCards:hover ~ .SliderContentCards { 
+  -webkit-transform: translate3d(161px, 0, 0);
+  transform: translate3d(161px, 0, 0);
+} */
+
+.cardContent {
+  color: rgba(00, 00, 00, 0);
+  position: absolute;
+  display: block;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  font-size: 1rem;
 
   h4 {
     margin: 0px;
+    padding: 1rem 1rem 0 1rem;
   }
-  img {
-    max-width: 15em;
-    pointer-events: none;
-  }
+
   h5 {
     margin: 0px;
+    padding: 1rem 1rem 0 1rem;
   }
 }
 
-.card:nth-of-type(even) {
-  background-color: #c1c1c1;
+.sliderContent:hover .chevron {
+  visibility: initial;
 }
 
-.sliderContent {
-  overflow: auto;
-  overflow: -moz-scrollbars-none;
-  
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+.card:hover > .cardContent {
+  color: rgba(225, 225, 225, 1);
+  background-color: rgba(00, 00, 00, 0.8);
 }
 
 .sliderContent::-webkit-scrollbar {
   width: 0 !important;
-
 }
 
-*{
+
+* {
   -webkit-overflow-scrolling: touch;
 }
 
-.chevron{
-  position: absolute;
-    color: white;
+
+virtual-scroller {
+  height: 200px;
+  
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+virtual-scroller::-webkit-scrollbar {
+  width: 0 !important;
 }

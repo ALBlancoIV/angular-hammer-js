@@ -1,74 +1,79 @@
-<!-- 
-<cdk-virtual-scroll-viewport itemSize="10" >
-  <ng-container *cdkVirtualFor="let x of worldsData">
-  </ng-container>
-</cdk-virtual-scroll-viewport> -->
-<!-- 
-<div *ngFor="let x of worldsData">
-  <a *ngIf="x.contents.length != 0">
-    <h3>{{ x.headers.headerLabel }}</h3>
-  </a>
-  <div *ngIf="x.contents.length != 0">
-    <cdk-virtual-scroll-viewport
-      orientation="horizontal"
-      class="sliderContent"
-      itemSize="200"
-    >
-      <ng-container *cdkVirtualFor="let i of x.contents">
-        <div class="cardWrapper">
-          <div class="card">
-            <h4>{{ i.textHead }}</h4>
-            <img src="{{ i.thumbnail }}" />
-            <h5>{{ i.textBody }}</h5>
-          </div>
-        </div>
-      </ng-container>
-    </cdk-virtual-scroll-viewport>
-  </div>
-</div> -->
-
-<!-- <div *ngFor="let x of worldsData">
-  <a *ngIf="x.contents.length != 0">
-    <h3>{{ x.headers.headerLabel }}</h3>
-  </a>
-  <div class="sliderContent" *ngIf="x.contents.length != 0">
-    <div class="sliderContentTitle">
-      <div class="card" *ngFor="let i of x.contents">
-        <h4>{{ i.textHead }}</h4>
-        <img src="{{ i.thumbnail }}" />
-        <h5>{{ i.textBody }}</h5>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <ng-container *ngFor="let x of worldsData">
-  <div>
-    <a *ngIf="x.contents.length != 0">
+  <div class="sliderContentTitle" *ngIf="x.contents.length != 0">
+    <a>
       <h3>{{ x.headers.headerLabel }}</h3>
     </a>
-    <div class="sliderContent" *ngIf="x.contents.length != 0">
-      <div class="sliderContentTitle">
-        <ng-container *ngFor="let i of x.contents">
-          <div  (deferLoad)="x.showID = true">
-            <div class="card" *ngIf="x.showID == true">
-              <h4>{{ i.textHead }}</h4>
-              <ngx-progressive-image-loader>
-                <!-- <ngx-image-placeholder>
-                <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> 
-              </ngx-image-placeholder> -->
-                <img
-                  src="{{ i.thumbnail }}"
-                  alt="{{ i.textHead }}"
-                  ngxProgressiveImage
-                />
-              </ngx-progressive-image-loader>
-              <!-- <img src="{{ i.thumbnail }}" alt="{{ i.textHead }}" /> -->
-              <h5>{{ i.textBody }}</h5>
-            </div>
-          </div>
-        </ng-container>
+  </div>
+  <div class="sliderContent" *ngIf="x.contents.length != 0">
+    <div class="chevron Left" (click)="arrowLeft($event)"><</div>
+    <div class="chevron Right" (click)="arrowRight($event)">></div>
+    <div
+      class="SliderContentCards"
+      *ngFor="let i of x.contents"
+      (deferLoad)="x.showID = true"
+    >
+      <div class="card" *ngIf="x.showID == true">
+        <img
+          data-src="{{ i.thumbnail }}"
+          loading="lazy"
+          alt="{{ i.textHead }}"
+        />
+        <div class="cardContent">
+          <h4>{{ i.textHead }}</h4>
+          <h5>{{ i.textBody }}</h5>
+        </div>
       </div>
     </div>
   </div>
 </ng-container>
+
+<!-- <ng-container *ngFor="let x of worldsData">
+  <div class="sliderContentTitle" *ngIf="x.contents.length != 0">
+    <a>
+      <h3>{{ x.headers.headerLabel }}</h3>
+    </a>
+  </div>
+  <div class="chevron Left" (click)="arrowLeft($event)" *ngIf="x.contents.length != 0"> < </div>
+  <div class="chevron Right" (click)="arrowRight($event)" *ngIf="x.contents.length != 0"> > </div>
+  <virtual-scroller #scroll [items]="x.contents" [horizontal]="true" class="sliderContent" *ngIf="x.contents.length != 0">
+    <div *ngFor="let i of scroll.viewPortItems" class="SliderContentCards">
+      <div class="card">
+        <img data-src="{{ i.thumbnail }}" loading="lazy" alt="{{ i.textHead }}"/>
+        <div class="cardContent">
+          <h4>{{ i.textHead }}</h4>
+          <h5>{{ i.textBody }}</h5>
+        </div>
+      </div>
+    </div>
+  </virtual-scroller>
+</ng-container> -->
+
+<!-- <ng-container *ngFor="let x of worldsData">
+  <div class="sliderContentTitle" *ngIf="x.contents.length != 0">
+    <a>
+      <h3>{{ x.headers.headerLabel }}</h3>
+    </a>
+  </div>
+
+  <div #scrollingBlock class="sliderContent" *ngIf="x.contents.length != 0">
+      <div class="chevron Left" (click)="arrowLeft($event)"><</div>
+      <div class="chevron Right" (click)="arrowRight($event)">></div>
+    <virtual-scroller #scroll [items]="x.contents" [parentScroll]="scrollingBlock"  [horizontal]="true">
+      <div #container>
+        <div class="SliderContentCards" *ngFor="let i of scroll.viewPortItems">
+          <div class="card">
+            <img
+              data-src="{{ i.thumbnail }}"
+              loading="lazy"
+              alt="{{ i.textHead }}"
+            />
+            <div class="cardContent">
+              <h4>{{ i.textHead }}</h4>
+              <h5>{{ i.textBody }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </virtual-scroller>
+  </div>
+</ng-container> -->
