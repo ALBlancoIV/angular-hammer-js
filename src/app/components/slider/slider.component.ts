@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CataloguesService } from "../../services/catalogues.service";
 
 @Component({
@@ -10,10 +10,8 @@ import { CataloguesService } from "../../services/catalogues.service";
 export class SliderComponent implements OnInit {
   featured: any[];
   items: any;
-  count: number = 26;
+  count: number = 11;
   pageCode: string;
-
-  SWIPE_ACTION = { LEFT: "swipeleft", RIGHT: "swiperight" };
 
   constructor(private catalogues: CataloguesService) {}
 
@@ -30,16 +28,6 @@ export class SliderComponent implements OnInit {
             this.featured.push(this.items);
           }
       });
-    }
-  }
-  swipeEvent(Elem: HTMLElement, action) {
-    if (action === this.SWIPE_ACTION.RIGHT) {
-      console.log('right');
-    }
-
-    if (action === this.SWIPE_ACTION.LEFT) {
-      console.log('left');
-      
     }
   }
 }
